@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row gx-0">
+        <div class="col-lg-3" *ngFor="let item of imageLists">
+            <div class="card m-2">
+                <div class="card-body">
+                    <img (click)="getImgById(item.id)" class="imgclass" src="{{item.imgUrl}}" alt="">
+                    <span class="m-2"><b>{{item.name}}</b></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="video">
+        <video #myVideo (mouseover)="playVideo()" (mouseout)="pauseVideo()" controls>
+            <source src="https://youtu.be/zONNZeTjbyw.mp4" type="video/mp4">
+          </video>          
+    </div>
+    <!-- <div class="video-wrapper" (mouseover)="playVideo()" (mouseout)="pauseVideo()">
+        <video #myVideo class="gif-video" loop>
+          <source src="path/to/video.mp4" type="video/mp4">
+        </video>
+      </div> -->
+</div>
+<ng-template #content let-modal>
+	<div class="modal-body">
+		<form>
+			<ngb-carousel>
+                <ng-template ngbSlide *ngFor="let item of ImageById">
+                    <div class="picsum-img-wrapper">
+                        <img [src]="item.imgUrl" alt="Random first slide" />
+                    </div>
+                    <div class="carousel-caption">
+                    </div>
+                    <div class="p-2 m-2 text-center">
+                        <h5>{{item.name}}</h5>
+                        <h5>{{item.price}}</h5>
+                    </div>
+                </ng-template>
+                
+            </ngb-carousel>
+		</form>
+	</div>
+	
+</ng-template>

@@ -1,0 +1,48 @@
+.imagediv{
+    height: 350px;
+}
+
+.row{
+    width: 100%;
+}
+.imgclass{
+    width: 100%;
+    height: 280px;
+}
+.popupclass{
+    height: 400px;
+}
+.card{
+    height: 354px;
+    text-align: center;
+}
+.modal-content{
+    width: 498.4px;
+    height: 494px;
+}
+.modal-body img{
+    width: 100%;
+    height: 342px;
+}
+/* video{
+    width: 50%;
+    height: 25%;
+}
+.video-wrapper {
+    position: relative;
+    display: block;
+  }
+  
+  .gif-video {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .gif-video:hover {
+    z-index: -1;
+  } */
+  

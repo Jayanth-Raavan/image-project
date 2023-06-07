@@ -1,0 +1,44 @@
+<div class="row gx-0">
+    <div class="col-lg-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Product Name</th>
+                    <th>Amount</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of Productlist">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price | currency:'INR'}}</td>
+                    <td class="d-flex justify-content-center"><img src="{{item.imgUrl}}" class="img-responsive img-thumbnail"
+                            style="width:98px;height:85px"></td>
+                    <td><a (click)="uploadImage(item.id,item.imgUrl)" class="btn btn-success">Upload</a> |
+                        <a (click)="removeImage(item.id,item.name)" class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+				<input type="file" (change)="onChange($event)" class="form-control">
+                <img [src]="image" alt="" style="width: -webkit-fill-available; height: -webkit-fill-available;">
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="proceedUpload()">Save</button>
+	</div>
+</ng-template>

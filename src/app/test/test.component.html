@@ -1,0 +1,14 @@
+<h1>Data Transfer</h1>
+
+<form (ngSubmit)="uploadData()">
+  <label for="data">Data to upload:</label>
+  <input type="text" id="data" name="data" [(ngModel)]="data">
+  <br>
+  <button type="submit">Upload</button>
+</form>
+
+<h2>Uploaded Data:</h2>
+<ul>
+  <li *ngFor="let item of uploadedData">{{ item.data }}</li>
+</ul>
+
